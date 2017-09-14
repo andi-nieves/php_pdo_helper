@@ -2,9 +2,13 @@
 
 This class will requires you to put your db credentials
 $dbname
+
 $host
+
 $user
+
 $password
+
 public function connect(){
         $this->dbname       = $dbname;
         $this->dbhost       = $host;
