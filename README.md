@@ -1,5 +1,23 @@
 ﻿# php_pdo_helper
 
+This class will requires you to put your db credentials
+$dbname
+$host
+$user
+$password
+public function connect(){
+        $this->dbname       = $dbname;
+        $this->dbhost       = $host;
+        $this->dbusername   = $user;
+        $this->dbpassword   = $password;
+        try{
+            $this->conn = new PDO("mysql:host=$this->dbhost;dbname=$this->dbname;charset=utf8",$this->dbusername,$this->dbpassword);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+
 sample query usage (direct query) without param
 $result = query("SELECT * FROM `table` WHERE `id` = 1");
 
