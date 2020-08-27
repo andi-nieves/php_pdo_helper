@@ -1,6 +1,7 @@
 ﻿# php_pdo_helper
 
 This class will requires you to put your db credentials
+```
 $dbname
 
 $host
@@ -8,7 +9,9 @@ $host
 $user
 
 $password
+```php
 
+```
 public function connect(){
         $this->dbname       = $dbname;
         $this->dbhost       = $host;
@@ -21,10 +24,11 @@ public function connect(){
             echo $e->getMessage();
         }
     }
-
-sample query usage (direct query) without param
+```php
+```
+//sample query usage (direct query) without param
 $result = query("SELECT * FROM `table` WHERE `id` = 1");
-
+```
 sample query usage with pdo parameter
 $params = array(
 	":field1" => 'value1',
