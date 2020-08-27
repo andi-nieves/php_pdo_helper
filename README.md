@@ -1,19 +1,12 @@
 ﻿# php_pdo_helper
 
-This class will requires you to put your db credentials
-```php
-$dbname
 
-$host
-
-$user
-
-$password
-```
+#SETUP
+This class requires you to put your db credentials in the connect function.
 
 ```php
 public function connect(){
-        $this->dbname       = "DN_NAME";
+        $this->dbname       = "DB_NAME";
         $this->dbhost       = "DB_HOST";
         $this->dbusername   = "DB_USERNAME";
         $this->dbpassword   = "DB_PASSWORD";
@@ -25,11 +18,13 @@ public function connect(){
         }
     }
 ```
+
+#SIMPLE WHERE QUERY
 ```php
 //sample query usage (direct query) without param
 $result = $db->query("SELECT * FROM `table` WHERE `id` = 1");
 ```
-
+#QUERY WITH PARAMETER
 ```php
 sample query usage with pdo parameter
 $params = array(
@@ -39,10 +34,14 @@ $params = array(
 $result = $db->query("SELECT * FROM `table` WHERE `field1` = :field1 AND `field2` = :field2",$params)
 //query function will return query result
 ```
+
+#CMD QUERY WITHOUT PARAMETER
 ```php
 sample query usage without param
 $id = $db->cmd("INSERT INTO `table` (`field1`,`field2`)values('value1','value2')");
 ```
+
+#CMD WITH PARAMETER
 ```php
 $params = array(
 	":value1" => 'value1',
@@ -52,6 +51,8 @@ sample query usage with param
 $id = $db->cmd("INSERT INTO `table` (`field1`,`field2`)values(':value1',':value2')",$params);
 //cmd funcion will return last inserted id
 ```
+
+** NOTE: Use parametized SQL to avoid SQL INJECTION.
 
 
 
