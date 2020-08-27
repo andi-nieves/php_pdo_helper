@@ -29,6 +29,8 @@ public function connect(){
 //sample query usage (direct query) without param
 $result = query("SELECT * FROM `table` WHERE `id` = 1");
 ```
+
+```php
 sample query usage with pdo parameter
 $params = array(
 	":field1" => 'value1',
@@ -36,10 +38,12 @@ $params = array(
 )
 $result = query("SELECT * FROM `table` WHERE `field1` = :field1 AND `field2` = :field2",$params)
 //query function will return query result
-
+```
+```php
 sample query usage without param
 $id = cmd("INSERT INTO `table` (`field1`,`field2`)values('value1','value2')");
-
+```
+```php
 $params = array(
 	":value1" => 'value1',
 	":value2" => 'value2'
@@ -47,6 +51,7 @@ $params = array(
 sample query usage with param
 $id = cmd("INSERT INTO `table` (`field1`,`field2`)values(':value1',':value2')",$params);
 //cmd funcion will return last inserted id
+```
 
 
 
