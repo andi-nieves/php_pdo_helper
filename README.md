@@ -1,7 +1,7 @@
 ﻿# php_pdo_helper
 
 This class will requires you to put your db credentials
-```
+```php
 $dbname
 
 $host
@@ -9,9 +9,9 @@ $host
 $user
 
 $password
-```php
-
 ```
+
+```php
 public function connect(){
         $this->dbname       = $dbname;
         $this->dbhost       = $host;
@@ -24,8 +24,8 @@ public function connect(){
             echo $e->getMessage();
         }
     }
-```php
 ```
+```php
 //sample query usage (direct query) without param
 $result = query("SELECT * FROM `table` WHERE `id` = 1");
 ```
