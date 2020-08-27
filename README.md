@@ -19,6 +19,11 @@ public function connect(){
     }
 ```
 
+## INSTANTIATION
+```php
+$db = new db();
+```
+
 ## SIMPLE WHERE QUERY
 ```php
 //sample query usage (direct query) without param
