@@ -1,7 +1,7 @@
-﻿# php_pdo_helper
+# php_pdo_helper
 
 
-#SETUP
+## SETUP
 This class requires you to put your db credentials in the connect function.
 
 ```php
@@ -19,12 +19,12 @@ public function connect(){
     }
 ```
 
-#SIMPLE WHERE QUERY
+## SIMPLE WHERE QUERY
 ```php
 //sample query usage (direct query) without param
 $result = $db->query("SELECT * FROM `table` WHERE `id` = 1");
 ```
-#QUERY WITH PARAMETER
+## QUERY WITH PARAMETER
 ```php
 sample query usage with pdo parameter
 $params = array(
@@ -35,13 +35,13 @@ $result = $db->query("SELECT * FROM `table` WHERE `field1` = :field1 AND `field2
 //query function will return query result
 ```
 
-#CMD QUERY WITHOUT PARAMETER
+## CMD QUERY WITHOUT PARAMETER
 ```php
 sample query usage without param
 $id = $db->cmd("INSERT INTO `table` (`field1`,`field2`)values('value1','value2')");
 ```
 
-#CMD WITH PARAMETER
+## CMD WITH PARAMETER
 ```php
 $params = array(
 	":value1" => 'value1',
