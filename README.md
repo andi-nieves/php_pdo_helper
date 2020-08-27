@@ -13,10 +13,10 @@ $password
 
 ```php
 public function connect(){
-        $this->dbname       = $dbname;
-        $this->dbhost       = $host;
-        $this->dbusername   = $user;
-        $this->dbpassword   = $password;
+        $this->dbname       = "DN_NAME";
+        $this->dbhost       = "DB_HOST";
+        $this->dbusername   = "DB_USERNAME";
+        $this->dbpassword   = "DB_PASSWORD";
         try{
             $this->conn = new PDO("mysql:host=$this->dbhost;dbname=$this->dbname;charset=utf8",$this->dbusername,$this->dbpassword);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -27,7 +27,7 @@ public function connect(){
 ```
 ```php
 //sample query usage (direct query) without param
-$result = query("SELECT * FROM `table` WHERE `id` = 1");
+$result = $db->query("SELECT * FROM `table` WHERE `id` = 1");
 ```
 
 ```php
@@ -36,12 +36,12 @@ $params = array(
 	":field1" => 'value1',
 	":field2" => 'value2'
 )
-$result = query("SELECT * FROM `table` WHERE `field1` = :field1 AND `field2` = :field2",$params)
+$result = $db->query("SELECT * FROM `table` WHERE `field1` = :field1 AND `field2` = :field2",$params)
 //query function will return query result
 ```
 ```php
 sample query usage without param
-$id = cmd("INSERT INTO `table` (`field1`,`field2`)values('value1','value2')");
+$id = $db->cmd("INSERT INTO `table` (`field1`,`field2`)values('value1','value2')");
 ```
 ```php
 $params = array(
@@ -49,7 +49,7 @@ $params = array(
 	":value2" => 'value2'
 )
 sample query usage with param
-$id = cmd("INSERT INTO `table` (`field1`,`field2`)values(':value1',':value2')",$params);
+$id = $db->cmd("INSERT INTO `table` (`field1`,`field2`)values(':value1',':value2')",$params);
 //cmd funcion will return last inserted id
 ```
 
